@@ -15,11 +15,7 @@ function Show({ handlePreview, e }) {
           premiered on {premiered}
         </span>
         <img
-          src={
-            image
-              ? image.original
-              : "https://images.moneycontrol.com/static-mcnews/2021/10/Jio-770x433.jpg"
-          }
+          src={image}
           className="card-img-top"
           alt="..."
         />
