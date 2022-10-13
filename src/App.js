@@ -51,7 +51,8 @@ function App() {
         <Navbar />
        
         <Routes>
-        <Route path="/" element={ <Shows data={data} handlePreview= {handlePreview} /> } />
+      //<Route path="/" element={ <Shows data={data} handlePreview= {handlePreview} /> } />
+        <Route path="/movieApp/" element={ <Shows data={data} handlePreview= {handlePreview} /> } />
        <Route path="/preview" element={ <Preview rating= {movieRating} name = {movieName} summary = { movieSummary} image={movieImage} premiered = {moviePremiered} />} /> 
        <Route path="/booking" element={ <Booking name = {movieName}/>} /> 
        <Route path="/completed" element={ <Completed name = {movieName}/>} /> 
