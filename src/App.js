@@ -1,13 +1,13 @@
 import React from "react";
 import Shows from "./components/Shows/Shows";
-
 import Navbar from "./components/Navbar";
 import Booking from "./components/Booking";
 import Preview from "./components/Preview";
 import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
-
 import { useState, useEffect } from "react";
 import Completed from "./components/Completed";
+
+
 function App() {
 
   const [data, setData] = useState([]);
@@ -36,10 +36,7 @@ function App() {
     setMovieImage(obj.image.original);
     setMovieRating(obj.rating.average)
   };
-
   
-
- 
   useEffect(() => {
     fetchData();
   }, []);
@@ -51,12 +48,11 @@ function App() {
         <Navbar />
        
         <Routes>
-      //<Route path="/" element={ <Shows data={data} handlePreview= {handlePreview} /> } />
-        <Route path="/movieApp/" element={ <Shows data={data} handlePreview= {handlePreview} /> } />
-       <Route path="/preview" element={ <Preview rating= {movieRating} name = {movieName} summary = { movieSummary} image={movieImage} premiered = {moviePremiered} />} /> 
-       <Route path="/booking" element={ <Booking name = {movieName}/>} /> 
-       <Route path="/completed" element={ <Completed name = {movieName}/>} /> 
-  </Routes> 
+          <Route path="/" element={ <Shows data={data} handlePreview= {handlePreview} /> } />
+          <Route path="/preview" element={ <Preview rating= {movieRating} name = {movieName} summary = { movieSummary} image={movieImage} premiered = {moviePremiered} />} /> 
+          <Route path="/booking" element={ <Booking name = {movieName}/>} /> 
+          <Route path="/completed" element={ <Completed name = {movieName}/>} /> 
+        </Routes> 
       </div>
     </BrowserRouter>
   );
